@@ -114,7 +114,7 @@ private extension SKPaginationView {
         let button = SKPrevButton(frame: frame)
         button.center = CGPoint(x: frame.width / 2 - 100, y: frame.height / 2)
         button.addTarget(browser, action: #selector(SKPhotoBrowser.gotoPreviousPage), for: .touchUpInside)
-        button.tintColor = SKPhotoBrowserOptions.tintColor
+        button.tintColor = SKPhotoBrowserOptions.iconTintColor
         addSubview(button)
         prevButton = button
     }
@@ -126,7 +126,7 @@ private extension SKPaginationView {
         let button = SKNextButton(frame: frame)
         button.center = CGPoint(x: frame.width / 2 + 100, y: frame.height / 2)
         button.addTarget(browser, action: #selector(SKPhotoBrowser.gotoNextPage), for: .touchUpInside)
-        button.tintColor = SKPhotoBrowserOptions.tintColor
+        button.tintColor = SKPhotoBrowserOptions.iconTintColor
         addSubview(button)
         nextButton = button
     }
@@ -146,8 +146,9 @@ class SKPaginationButton: UIButton {
         contentMode = .center
         
         let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)",
-                            in: bundle, compatibleWith: nil) ?? UIImage().withRenderingMode(.alwaysTemplate)
-        setImage(image, for: .normal)
+                            in: bundle, compatibleWith: nil) ?? UIImage()
+        self.tintColor = SKPhotoBrowserOptions.iconTintColor
+        setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
     }
 }
 

@@ -33,13 +33,9 @@ class SKButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = true
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         
-        let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)", in: bundle, compatibleWith: nil) ?? UIImage().withRenderingMode(.alwaysTemplate)
-//        if #available(iOS 13.0, *) {
-//            image.withTintColor(SKPhotoBrowserOptions.tintColor)
-//        } else {
-//            // Fallback on earlier versions
-//        }
-        setImage(image, for: .normal)
+        let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)", in: bundle, compatibleWith: nil) ?? UIImage()
+        self.tintColor = SKPhotoBrowserOptions.iconTintColor
+        setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
     }
   
     func setFrameSize(_ size: CGSize? = nil) {

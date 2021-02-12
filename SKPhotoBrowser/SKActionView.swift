@@ -92,7 +92,7 @@ extension SKActionView {
             closeButton = SKCloseButton(frame: .zero)
             closeButton.addTarget(self, action: #selector(closeButtonPressed(_:)), for: .touchUpInside)
             closeButton.isHidden = !SKPhotoBrowserOptions.displayCloseButton
-            closeButton.tintColor = SKPhotoBrowserOptions.tintColor
+            closeButton.tintColor = SKPhotoBrowserOptions.iconTintColor
             addSubview(closeButton)
         }
 
@@ -110,7 +110,7 @@ extension SKActionView {
             deleteButton = SKDeleteButton(frame: .zero)
             deleteButton.addTarget(self, action: #selector(deleteButtonPressed(_:)), for: .touchUpInside)
             deleteButton.isHidden = !SKPhotoBrowserOptions.displayDeleteButton
-            deleteButton.tintColor = SKPhotoBrowserOptions.tintColor
+            deleteButton.tintColor = SKPhotoBrowserOptions.iconTintColor
             addSubview(deleteButton)
         }
         
