@@ -146,7 +146,7 @@ class SKPaginationButton: UIButton {
         contentMode = .center
         
         let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)",
-            in: bundle, compatibleWith: nil) ?? UIImage()
+                            in: bundle, compatibleWith: nil) ?? UIImage().withRenderingMode(.alwaysTemplate)
         setImage(image, for: .normal)
     }
 }
