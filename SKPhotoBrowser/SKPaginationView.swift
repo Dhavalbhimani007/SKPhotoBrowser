@@ -114,6 +114,7 @@ private extension SKPaginationView {
         let button = SKPrevButton(frame: frame)
         button.center = CGPoint(x: frame.width / 2 - 100, y: frame.height / 2)
         button.addTarget(browser, action: #selector(SKPhotoBrowser.gotoPreviousPage), for: .touchUpInside)
+        button.tintColor = SKPhotoBrowserOptions.tintColor
         addSubview(button)
         prevButton = button
     }
@@ -125,6 +126,7 @@ private extension SKPaginationView {
         let button = SKNextButton(frame: frame)
         button.center = CGPoint(x: frame.width / 2 + 100, y: frame.height / 2)
         button.addTarget(browser, action: #selector(SKPhotoBrowser.gotoNextPage), for: .touchUpInside)
+        button.tintColor = SKPhotoBrowserOptions.tintColor
         addSubview(button)
         nextButton = button
     }
