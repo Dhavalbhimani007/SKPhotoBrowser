@@ -34,6 +34,11 @@ class SKButton: UIButton {
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         
         let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)", in: bundle, compatibleWith: nil) ?? UIImage()
+        if #available(iOS 13.0, *) {
+            image.withTintColor(SKPhotoBrowserOptions.tintColor)
+        } else {
+            // Fallback on earlier versions
+        }
         setImage(image, for: .normal)
     }
   
